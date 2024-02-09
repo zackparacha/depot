@@ -38,8 +38,8 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        @product.broadcast_replace_later_to 'products',
-          partial: 'store/product'
+        @product.broadcast_replace_later_to "products",
+          partial: "store/product"
         format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else
