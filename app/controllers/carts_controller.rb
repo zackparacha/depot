@@ -54,7 +54,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to store_index_url,
-        notice: 'Your cart is currently empty' }
+        notice: "Your cart is currently empty" }
       format.json { head :no_content }
     end
   end
@@ -63,7 +63,7 @@ class CartsController < ApplicationController
     # Rescue exceptions if cart is not found
     def invalid_cart
       logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to store_index_url, notice: 'Invalid cart'
+      redirect_to store_index_url, notice: "Invalid cart"
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
