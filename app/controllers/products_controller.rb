@@ -51,6 +51,7 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 or /products/1.json
   def destroy
+    debugger
     @product.destroy!
 
     respond_to do |format|
