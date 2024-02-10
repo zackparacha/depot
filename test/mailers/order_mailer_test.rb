@@ -5,7 +5,7 @@ class OrderMailerTest < ActionMailer::TestCase
     mail = OrderMailer.received(orders(:one))
     assert_equal "Pragmatic Store Order Confirmation", mail.subject
     assert_equal [ "dave@example.org" ], mail.to
-    assert_equal [ "zackparacha@gmail.com" ], mail.from
+    assert_equal [ "test@gmail.com" ], mail.from
     assert_match /1 x Programming Ruby 1.9/, mail.body.encoded
   end
 
@@ -13,7 +13,7 @@ class OrderMailerTest < ActionMailer::TestCase
     mail = OrderMailer.shipped(orders(:one))
     assert_equal "Pragmatic Store Order Shipped", mail.subject
     assert_equal [ "dave@example.org" ], mail.to
-    assert_equal [ "zackparacha@gmail.com" ], mail.from
+    assert_equal [ "test@gmail.com" ], mail.from
     assert_match %r{
       <td[^>]*>1<\/td>\s*
       <td>&times;<\/td>\s*
